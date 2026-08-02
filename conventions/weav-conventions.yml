@@ -1,0 +1,74 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/weav-ai/weavai-developer-library
+docs: https://weav-ai.github.io/
+notes: >-
+  Cross-cutting request/response semantics captured from the first-party
+  weavaidev Python library and the weav-ai.github.io developer guide. No public
+  OpenAPI is published, so these are the documented/observed conventions of the
+  tenant-deployed Weav.ai Decisioning Platform REST API.
+authentication:
+  style: bearer-token
+  header: 'Authorization: Bearer <auth_token>'
+  ref: authentication/weav-authentication.yml
+base_url:
+  style: per-tenant-environment
+  description: >-
+    The API host is not a single shared production endpoint. The SDK Config
+    takes an `env` value that is prepended to each service path
+    (get_base_url -> f"{config.env}{endpoint}"); each customer/workspace is
+    served from its own environment host. A LOCAL mode maps services to
+    localhost dev ports (documents 7015, workflows 7036, agents 7052,
+    chats 7030).
+content_type:
+  request: application/json
+  response: application/json
+  accept_header: application/json
+services:
+- name: documents
+  paths:
+  - /documents/
+  - documents/{DOC_ID}
+  - documents/{DOC_ID}/summary
+  - documents/{DOC_ID}/hierarchy
+  - documents/{DOC_ID}/pages/{PAGE_NUMBER}
+  - documents/categories/
+  - documents/tags/
+- name: folders
+  paths:
+  - /folders/
+  - /folders/writable-folders/
+  - /folders/{FOLDER_ID}
+- name: forms
+  paths:
+  - forms/
+  - forms/{FORM_ID}
+  - forms/instances/
+  - forms/{FORM_ID}/analytics/
+- name: agents
+  paths:
+  - /agents/
+  - agents/configurations/
+- name: workflows
+  paths:
+  - /workflows/
+  - /workflows/{WORKFLOW_NAME}/run
+  - /workflows/{WORKFLOW_ID}/{WORKFLOW_RUN_ID}/status
+  - /workflows/workflow_runs
+- name: actions
+  paths:
+  - /actions/
+  - /actions/{ACTION_TYPE}
+- name: chat
+  paths:
+  - /chat
+  - /chat_history
+  - /chat_logs/
+idempotency:
+  supported: false
+  notes: No idempotency-key header or contract is documented in the SDK or docs.
+pagination:
+  documented: false
+versioning:
+  scheme: none-documented
+  notes: Service paths carry no version prefix; the SDK targets endpoints directly.

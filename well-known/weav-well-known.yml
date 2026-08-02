@@ -1,0 +1,16 @@
+generated: '2026-07-21'
+method: searched
+host: https://weav.ai
+source: live probes of weav.ai /.well-known/ surface
+notes: >-
+  No .well-known discovery documents are published on weav.ai as of this pass.
+  All probed paths returned 404. Absence is a valid, recorded result; no raw
+  files were saved and no WellKnown/SecurityTxt pointer is wired (nothing to
+  point at).
+documents:
+- path: /.well-known/security.txt
+  status: 404
+- path: /.well-known/openid-configuration
+  status: 404
+- path: /llms.txt
+  status: 404

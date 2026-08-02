@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/weav-ai/weavai-developer-library
+notes: >-
+  Weav.ai ships a first-party Python developer library (weavaidev) via its
+  weav-ai GitHub organization. It is distributed as a built wheel inside the
+  repository (dist/weavaidev-0.0.1-py3-none-any.whl), NOT published to PyPI as
+  of this pass (pypi.org/pypi/weavaidev and /weavai both return 404). The
+  unrelated `weav` package on PyPI belongs to the weav.com financial-data
+  company and is deliberately excluded here.
+packages:
+- language: python
+  registry: github
+  name: weavaidev
+  version: 0.0.1
+  url: https://github.com/weav-ai/weavai-developer-library
+  install: pip3 install dist/weavaidev-0.0.1-py3-none-any.whl
+  official: true
+  license: GPL-3.0
+  modules:
+  - FolderOperations
+  - FormOperations
+  - DocumentOperations
+  - ChatOperations
+  - AgentOperations
+  - ActionOperations
+  - WorkflowOperations

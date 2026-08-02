@@ -1,0 +1,50 @@
+generated: '2026-07-21'
+method: derived
+status: candidate
+source: https://github.com/weav-ai/weavai-developer-library
+notes: >-
+  No official hosted/remote MCP server was found for Weav.ai. This is a
+  CANDIDATE tool surface derived from the real operations exposed by the
+  first-party weavaidev Python library (no public OpenAPI exists). Each tool
+  maps to a documented service operation; a production MCP server would front
+  the tenant-deployed Weav.ai Decisioning Platform REST API with a Bearer token.
+server:
+  name: weav
+  transport: http
+tools:
+- name: list_documents
+  description: List documents in the platform.
+  source_operation: 'documents: GET /documents/'
+- name: get_document
+  description: Retrieve a document by id.
+  source_operation: 'documents: GET documents/{DOC_ID}'
+- name: get_document_summary
+  description: Get an AI-generated summary of a document.
+  source_operation: 'documents: GET documents/{DOC_ID}/summary'
+- name: list_folders
+  description: List folders.
+  source_operation: 'folders: GET /folders/'
+- name: create_folder
+  description: Create a folder.
+  source_operation: 'folders: POST /folders/'
+- name: list_forms
+  description: List forms.
+  source_operation: 'forms: GET forms/'
+- name: get_form_analytics
+  description: Retrieve analytics for a form.
+  source_operation: 'forms: GET forms/{FORM_ID}/analytics/'
+- name: list_agents
+  description: List configured agents.
+  source_operation: 'agents: GET /agents/'
+- name: run_workflow
+  description: Run a workflow by name.
+  source_operation: 'workflows: POST /workflows/{WORKFLOW_NAME}/run'
+- name: get_workflow_run_status
+  description: Get the status of a workflow run.
+  source_operation: 'workflows: GET /workflows/{WORKFLOW_ID}/{WORKFLOW_RUN_ID}/status'
+- name: list_actions
+  description: List available action types.
+  source_operation: 'actions: GET /actions/'
+- name: chat
+  description: Send a chat/decisioning query.
+  source_operation: 'chat: POST /chat'

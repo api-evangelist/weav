@@ -1,0 +1,27 @@
+generated: '2026-07-21'
+method: searched
+source: https://github.com/weav-ai/weavai-developer-library
+docs: https://weav-ai.github.io/
+notes: >-
+  Derived from the first-party weavaidev Python library source (no public
+  OpenAPI is published). Every service client sends
+  `Authorization: Bearer <auth_token>` with `Accept: application/json`. The
+  token is supplied as a workspace/environment secret (SecretStr auth_token)
+  alongside an `env` value that selects the tenant service host.
+summary:
+  types:
+  - http
+  http_schemes:
+  - bearer
+  api_key_in: []
+  oauth2_flows: []
+schemes:
+- name: bearerAuth
+  type: http
+  scheme: bearer
+  description: >-
+    Bearer token passed in the Authorization header for all REST calls
+    (Authorization: Bearer <auth_token>). Tokens are environment/workspace
+    scoped; the SDK Config takes an auth_token (SecretStr) plus an env host.
+  sources:
+  - https://github.com/weav-ai/weavai-developer-library
