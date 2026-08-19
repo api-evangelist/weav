@@ -2,12 +2,10 @@ generated: '2026-07-21'
 method: derived
 status: candidate
 source: https://github.com/weav-ai/weavai-developer-library
-notes: >-
-  No official hosted/remote MCP server was found for Weav.ai. This is a
-  CANDIDATE tool surface derived from the real operations exposed by the
-  first-party weavaidev Python library (no public OpenAPI exists). Each tool
-  maps to a documented service operation; a production MCP server would front
-  the tenant-deployed Weav.ai Decisioning Platform REST API with a Bearer token.
+notes: No official hosted/remote MCP server was found for Weav.ai. This is a CANDIDATE tool surface derived
+  from the real operations exposed by the first-party weavaidev Python library (no public OpenAPI exists).
+  Each tool maps to a documented service operation; a production MCP server would front the tenant-deployed
+  Weav.ai Decisioning Platform REST API with a Bearer token.
 server:
   name: weav
   transport: http
@@ -48,3 +46,9 @@ tools:
 - name: chat
   description: Send a chat/decisioning query.
   source_operation: 'chat: POST /chat'
+deployment:
+  mode: none
+  verified: derived
+  tools: 12
+  checked: '2026-08-12'
+  source: catalog MCP census
