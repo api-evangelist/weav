@@ -1,0 +1,40 @@
+# Pricing transcribed from the provider's own page — see provenance. Numbers are quoted, not derived.
+generated: '2026-10-07'
+method: searched
+source: https://weav.ai/pricing
+sources:
+- https://weav.ai/pricing
+provenance:
+  tool: all/0-working/economics/harvest_pricing.py
+  run: 20261007T112026
+  grounding: every price_text was found verbatim in the fetched page text
+audience: business-product
+pricing_basis: negotiated
+delivery:
+  delivery: managed
+  method: page
+  read: '2026-10-07'
+published: false
+note: Tiered plans listed but no numeric prices shown; pricing is based on number of documents processed,
+  all tiers say contact us.
+plan_count: 3
+plans:
+- name: Free Trial
+  price_text: No credit card required
+  period: none
+  included_quota: Up to 5 documents*; 14-day free trial; file sizes up to 1 MB
+  overage: 'Free trial users: If you want to process more than 5 documents, please upgrade to the Professional
+    or Enterprise plan.'
+- name: Professional
+  price_text: Contact Us
+  period: none
+  included_quota: 100 documents per month
+  overage: you will be charged a per document fee for each additional document
+- name: Enterprise
+  price_text: Contact us
+  period: none
+  included_quota: Unlimited documents
+rate_limit_statements:
+- Up to 5 documents*
+- 100 documents per month
+- File sizes up to 1 MB are supported during the free trial period.
