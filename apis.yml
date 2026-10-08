@@ -96,6 +96,8 @@ maintainers:
 - FN: APIs.json
   email: info@apis.io
 common:
+- type: Pricing
+  url: https://weav.ai/pricing
 - type: Plans
   url: plans/weav-plans-pricing.yml
 - url: https://weav.ai/blog/rss.xml
